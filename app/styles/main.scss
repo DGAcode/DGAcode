@@ -1,0 +1,549 @@
+// bower:scss
+// endbower
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    color: #222;
+    font-size: 62.5%;
+    height: 100%;
+}
+
+::-moz-selection {
+    background: rgba(251, 188, 5, .7);
+    ;
+    text-shadow: none;
+}
+
+::selection {
+    background: rgba(251, 188, 5, .7);
+    ;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@media print {
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    *:first-line {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+//end reset
+//fonts
+@font-face {
+    font-family: 'Lato-Heavy';
+    src: url('../fonts/lato-heavy-webfont.eot');
+    src: url('../fonts/lato-heavy-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-heavy-webfont.woff') format('woff'), url('../fonts/Lato-Heavy.ttf') format('truetype'), url('../fonts/lato-heavy-webfont.svg') format('svg');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lato-regular-webfont.woff') format('woff'), url('../fonts/Lato-Regular.ttf') format('truetype'), url('../fonts/lato-regular-webfont.svg') format('svg');
+    font-weight: 400;
+}
+
+//general styling
+$fontLatoHeavy: 'Lato-Heavy',
+Helvetica,
+sans-serif;
+$fontLatoRegular: 'Lato-Regular',
+Helvetica,
+sans-serif;
+$Blue: rgb(66,
+133,
+244);
+$Red: rgb(234,
+67,
+53);
+$Yellow: rgb(251,
+188,
+5);
+$Green: rgb(52,
+168,
+83);
+$transparentBlack: rgba(16,
+26,
+64,
+0.7);
+.highlightText1,
+.highlightText2,
+.highlightText3,
+.highlightText4 {
+    font-family: $fontLatoHeavy;
+    font-size: 8rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #000;
+    z-index: 10;
+    padding: 100px 0 100px 0;
+    background: $Green;
+}
+
+.highlightText2 {
+    background: $Red;
+}
+
+.highlightText3 {
+    background: $Yellow;
+}
+
+.highlightText4 {
+    background: $Blue;
+}
+
+@media (max-width: 600px) {
+    .highlightText1,
+    .highlightText2,
+    .highlightText3,
+    .highlightText4 {
+        font-size: 4rem;
+    }
+}
+
+.highlightText:nth-child(2) {
+    background-color: $Yellow;
+}
+
+.titleText {
+    font-family: $fontLatoRegular;
+    font-size: 2.8rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.normalText {
+    font-family: $fontLatoRegular;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.image-wrapper {
+  display: block;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bigImages {
+    display: block;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
+  .bigImages {
+      height: 100%;
+      width: auto;
+  }
+}
+
+.B,
+.E1,
+.H {
+    padding: 100px 0 100px 0;
+}
+
+//navigation
+.open {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+    transition: opacity 0.2s linear;
+    z-index: 20;
+}
+
+.open:hover {
+    opacity: 0.8;
+}
+
+.open span {
+    display: block;
+    float: left;
+    clear: both;
+    height: 4px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: #000;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.open span:nth-child(1) {
+    margin-top: 10px;
+    z-index: 9;
+}
+
+.open span:nth-child(2) {
+    margin-top: 25px;
+}
+
+.open span:nth-child(3) {
+    margin-top: 40px;
+}
+
+.sub-menu {
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 0;
+    width: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background-color: $Blue;
+    border-radius: 50%;
+    z-index: 18;
+    overflow: hidden;
+}
+
+.sub-menu li {
+    display: block;
+    float: right;
+    clear: both;
+    height: auto;
+    margin-right: -160px;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.sub-menu li:first-child {
+    margin-top: 180px;
+}
+
+.sub-menu li:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.sub-menu li:nth-child(2) {
+    transition-delay: 0.10s;
+}
+
+.sub-menu li:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.sub-menu li:nth-child(4) {
+    transition-delay: 0.20s;
+}
+
+.sub-menu li:nth-child(5) {
+    transition-delay: 0.25s;
+}
+
+.sub-menu li a {
+    color: #fff;
+    font-family: $fontLatoHeavy;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    float: left;
+    line-height: 40px;
+}
+
+.oppenned .sub-menu {
+    opacity: 1;
+    height: 400px;
+    width: 400px;
+}
+
+.oppenned span:nth-child(2) {
+    overflow: visible;
+}
+
+.oppenned span:nth-child(1),
+.oppenned span:nth-child(3) {
+    z-index: 100;
+    transform: rotate(45deg);
+}
+
+.oppenned span:nth-child(1) {
+    transform: rotate(45deg) translateY(12px) translateX(12px);
+}
+
+.oppenned span:nth-child(2) {
+    height: 400px;
+    width: 400px;
+    right: -160px;
+    top: -160px;
+    border-radius: 50%;
+    background-color: $Yellow;
+}
+
+.oppenned span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px) translateX(10px);
+}
+
+.oppenned li {
+    margin-right: 168px;
+}
+
+//end navigation
+//B
+.B {
+    text-align: center;
+}
+
+.dgaIntro {
+    width: 50%;
+    display: inline-block;
+    text-align: left;
+    margin: 100px 0 0 0;
+}
+
+.dgaImage {
+    max-width: 300px;
+    width: 100%;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 100px 0 50px 0;
+}
+//D & E & G
+.featuredProjects,
+.whatIdo,
+.servContainer,
+{
+    padding: 100px 0 100px 0;
+    text-align: center;
+}
+
+//D
+.projectsImgWrapper {
+    background: #ddd;
+}
+
+.projectsImg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 100px 0;
+    margin: 0 auto 0 auto;
+}
+
+//E & G
+.whatIdo2,
+.extraWrapper {
+    padding: 0 0 100px 0;
+    text-align: center;
+}
+
+//G
+.extraWrapper {
+    padding-top: 100px;
+    background: #ddd;
+}
+
+.extraSidesWrapper,
+.whatIdo2 {
+    display: flex;
+    padding-top: 50px;
+    width: 100%;
+}
+
+// G & E
+.extraLeft,
+.whatIdo2Left {
+    width: 50%;
+}
+
+.extraRight,
+.whatIdo2Right {
+    width: 50%;
+}
+
+//footer
+.footer {
+    font-family: $fontLatoRegular;
+    text-align: center;
+    font-size: 1rem;
+    padding: 100px 0;
+    background: #000;
+    color: #fff;
+}
+
+// unvisited link
+.footer a:link {
+    color: #ddd;
+}
+
+// visited link
+.footer a:visited {
+    color: #ddd;
+}
+
+// mouse over link
+.footer a:hover {
+    color: #fff;
+}
+
+.footerList {
+    list-style: none;
+}
+
+.footerList li {
+    display: inline-block;
+    padding: 0 17px;
+}
+
+//Media queries
+//General styling
+
+// Contact
+.contactSection {
+    margin: 100px auto;
+    text-align: center;
+}
