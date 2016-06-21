@@ -1,4 +1,5 @@
 // generated on 2016-06-08 using generator-webapp 2.1.0
+const critical = require('critical').stream;
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -171,3 +172,11 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
 });
+
+gulp.task('critical', function () {
+    return gulp.src('dist/*.html')
+        .pipe(critical({base: 'dist/', inline: true, css: ['dist/styles/components.css','dist/styles/main.css']}))
+        .pipe(gulp.dest('dist'));
+});
+
+
